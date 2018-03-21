@@ -8,7 +8,7 @@ import blocksManager from "./store/BlocksManager";
 
 const workflow = new Workflow();
 
-export class App extends React.Component<undefined, undefined> {
+export class App extends React.Component<any, any> {
   render() {
     return (
       <Provider workflow={workflow}>

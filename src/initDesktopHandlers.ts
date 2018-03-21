@@ -1,7 +1,8 @@
 import { BrowserWindow, ipcMain, dialog } from "electron";
 const jsonfile = require("jsonfile");
 
-export default function initialize() {
+
+export function initDesktopHandlers() {
   ipcMain.on("newWindow", (event, url) => {
     console.log(url);
     const mainWindow = new BrowserWindow({

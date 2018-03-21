@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from "electron";
 import installExtension, {REACT_DEVELOPER_TOOLS} from "electron-devtools-installer";
 import { enableLiveReload } from "electron-compile";
-import initialize from "./MainHandler";
+import {initDesktopHandlers} from "./initDesktopHandlers";
 
 
 let mainWindow: Electron.BrowserWindow | null = null;
@@ -18,8 +18,7 @@ const createWindow = async () => {
     height: 600
   });
 
-
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   if (isDevMode) {
     await installExtension(REACT_DEVELOPER_TOOLS);
@@ -31,12 +30,11 @@ const createWindow = async () => {
     mainWindow = null;
   });
 
-  initialize();
+  initDesktopHandlers();
 };
 
 
 app.on("ready", createWindow);
-
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
