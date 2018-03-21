@@ -19,7 +19,7 @@ const ConnectorSpan = styled.div`
   margin-right: 5px;
 `;
 
-export default class PortWidget extends React.Component<PortProps, PortState> {
+class PortWidget extends React.Component<PortProps, PortState> {
   constructor(props: PortProps) {
     super(props);
     this.state = {
@@ -45,3 +45,5 @@ export default class PortWidget extends React.Component<PortProps, PortState> {
     );
   }
 }
+
+export {PortWidget as default, PortWidget}

@@ -2,4 +2,4 @@ interface IElectronHandler {
   OpenNewWindow(url);
 }
 
-export default IElectronHandler;
+export { IElectronHandler as default, IElectronHandler};

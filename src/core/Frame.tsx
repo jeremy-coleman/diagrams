@@ -44,7 +44,7 @@ const IconPanel = styled.div`
   border-radius: 5px;
 `;
 
-function Frame({ node, store, children, details, icon, onRemove }: IFrame) {
+function FrameBase({ node, store, children, details, icon, onRemove }: IFrame) {
   const { isPaused } = store;
   return (
     <Container>
@@ -90,4 +90,6 @@ function Frame({ node, store, children, details, icon, onRemove }: IFrame) {
   );
 }
 
-export default observer(Frame);
+let Frame = observer(FrameBase);
+
+export {Frame as default, Frame}

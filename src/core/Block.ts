@@ -16,7 +16,7 @@ export interface IExecutionResult {
   block: Block;
 }
 
-export default class Block {
+class Block {
   @observable public name: string;
   @observable public parents?: Block[];
   @observable public children?: Block[];
@@ -120,3 +120,5 @@ export default class Block {
     }
   }
 }
+
+export { Block as default, Block }
